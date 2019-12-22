@@ -1,0 +1,53 @@
+<div class="alert alert-success" role="alert" *ngFor="let item of tareas">
+  <h5 class="alert-heading">
+    {{item.nombre}}
+
+    <div class="float-right" (click)="mostrarModal(modalEliminar, item)">
+      <i class="far fa-trash-alt" tooltip="Eliminar Tarea"  placement="right"></i>
+    </div>
+    <div class="float-right mx-2"  (click)="editarModal(modalEditar, item)">
+      <i class="far fa-edit" tooltip="EditarTarea"  placement="left"></i>
+    </div>
+  </h5>
+  <p class="mb-0">{{item.descripcion}}</p>
+
+</div>
+
+<!-- Modal de eliminar-->
+<ng-template #modalEliminar>
+  <div class="modal-body text-center">
+    <p>Esta seguro de eliminar la tarea?</p>
+    <button type="button" class="btn btn-danger mx-1" (click)="eliminar()" >Eliminar</button>
+    <button type="button" class="btn btn-secondary mx-1" (click)="cancelar()" >Cancelar</button>
+  </div>
+</ng-template>
+
+<!-- Modal Editar-->
+<ng-template #modalEditar>
+  
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Editar Tarea</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <form (ngSubmit)="editar()">
+    <div class="modal-body">
+      <div class="form-group">
+        <input type="text" placeholder="Titulo de la tarea" name="nombre" class="form-control"
+          [(ngModel)]="tar.nombre">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Descripcion de la tarea" name="descripcion" class="form-control"
+          [(ngModel)]="tar.descripcion">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-success">Guardar</button>
+      <button type="button" class="btn btn-secondary" (click)="modalRef.hide()">Cancelar</button>
+    </div>
+  </form>
+  
+  
+</ng-template>
