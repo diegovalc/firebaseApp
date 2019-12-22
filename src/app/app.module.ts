@@ -15,13 +15,23 @@ import { ListaAddComponent } from './components/lista-add/lista-add.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { RegisterPageComponent } from './components/register-page/register-page.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaComponent,
-    ListaAddComponent
+    ListaAddComponent,
+    HomePageComponent,
+    NavbarComponent,
+    RegisterPageComponent,
+    LoginPageComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
