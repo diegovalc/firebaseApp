@@ -1,0 +1,18 @@
+.btn-facebook, .btn-google, .btn-twitter{
+    width: 32%;
+}
+
+.btn-facebook{
+    background: #3b5998 ;
+    color: #ffffff;
+}
+
+.btn-google{
+    background: #db4a39  ;
+    color: #ffffff;
+}
+
+.btn-twitter{
+    background: #00acee  ;
+    color: #ffffff;
+}
