@@ -15,6 +15,8 @@ import { ListaAddComponent } from './components/lista-add/lista-add.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { AlertModule } from 'ngx-bootstrap/alert';
+
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
@@ -22,6 +24,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PrivadoPageComponent } from './components/privado-page/privado-page.component';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -45,9 +48,13 @@ import { PrivadoPageComponent } from './components/privado-page/privado-page.com
     FormsModule,
     ModalModule.forRoot(),
     TooltipModule.forRoot(),
+    AlertModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [TareasService],
+  providers: [
+    TareasService, 
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
