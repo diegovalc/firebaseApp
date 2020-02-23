@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { FlashMessagesModule } from 'angular2-flash-messages'
+import { FlashMessagesService } from 'angular2-flash-messages'
+
 
 import { AppComponent } from './app.component';
 
@@ -25,6 +28,8 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 import { AppRoutingModule } from './app-routing.module';
 import { PrivadoPageComponent } from './components/privado-page/privado-page.component';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
+import { NoAuthGuard } from './guards/no-auth.guard';
 
 
 @NgModule({
@@ -49,11 +54,15 @@ import { AuthService } from './services/auth.service';
     ModalModule.forRoot(),
     TooltipModule.forRoot(),
     AlertModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    FlashMessagesModule
   ],
   providers: [
     TareasService, 
-    AuthService
+    AuthService,
+    AuthGuard,
+    NoAuthGuard,
+    FlashMessagesService
   ],
   bootstrap: [AppComponent]
 })
