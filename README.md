@@ -1,6 +1,6 @@
 # FirebaseCurso
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
+CRUD y Login utilizando firebase y angular 7
 
 ## Development server
 
